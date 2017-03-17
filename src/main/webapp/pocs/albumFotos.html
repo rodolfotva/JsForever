@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>:: ALBUM DE FOTOS ::</title>
+
+
+<style>
+#album {
+	width: 1000px;
+	height: 500px;
+	overflow: hidden;
+	margin: 50px auto;
+	box-shadow: 0 0 8px #000;
+	border-radius: 5px 5px 5px 5px;
+	background-color: black;
+}
+
+#fotoPrincipal {
+	width: 100%;
+	height: 80%;
+	background-color: #444343;
+	vertical-align: middle;
+}
+
+#fotoPrincipal img {
+	display: block;
+	position: relative;
+	top: 12%;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#menuFotos {
+	width: 100%;
+	height: 20%;
+	padding-top: 27px;
+	padding-left: 1%;
+	padding-right: 1%;
+	background-color: white;
+	opacity: 0.9;
+}
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+});
+
+function abrirImagem(valor){
+	jQuery('#fotoPrincipal').empty();
+	jQuery('#fotoPrincipal').html('<img src="../images/'+valor+'.jpg" />');
+}
+
+</script>
+</head>
+<body>
+	<h1>
+		<a name="cabecalho" id="cabecalho">ALBUM DE FOTOS</a>
+	</h1>
+	
+
+
+	<div id="album">
+		<div id="fotoPrincipal"></div>
+		<div id="menuFotos">
+			<a href="javascript: abrirImagem('01');"><img id="img01" src="../images/01_mini.jpg" /></a>
+			<a href="javascript: abrirImagem('02');"><img id="img02" src="../images/02_mini.jpg" /></a>
+			<a href="javascript: abrirImagem('03');"><img id="img03" src="../images/03_mini.jpg" /></a>
+		</div>
+	</div>	
+
+</body>
+</html>

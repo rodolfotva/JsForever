@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>:: Apontamento de Horas - Tokio Marine ::</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<link href="../../css/jquery.click-calendario-1.0.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery/jquery.click-calendario-1.0.js"></script>		
+
+<style type="text/css">
+.filho {
+	padding: 0px 0px 0px 0px;
+}
+
+.cabecalho {
+	padding: 0px 0px 0px 0px;
+}
+
+.cabecalhoPut {
+	border:0;
+	text-align: center;
+	font-weight:bold
+}
+</style>
+
+<script type="text/javascript">
+
+	$(window).load(function() {
+		
+		var contador = 0;
+
+		addDiv();
+		descePagina();
+		
+		function createElement(index) {
+			return '<div id="div'+index+'" class="filho"><input type="date" name="data'+index+'" size="30" /><input type="text" name="atividade'+index+'" size="30" /><input type="text" name="os'+index+'" size="30" /><input type="text" name="descricao'+index+'" size="50" /><input type="text" name="hora'+index+'" size="30" /></div>';
+		}
+
+		function addDiv() {
+			$('#container').append(createElement(contador++));
+		}
+
+		function removeDiv() {
+			if(contador != 0){
+				document.getElementById('div'+(--contador)).remove();
+			}
+		}
+
+		function cleanDiv() {
+			contador = 0;
+			$('#container').empty();
+		}
+
+		function descePagina(){
+			document.getElementById('ancoraRodapeVai').click();
+		}
+		
+		$('#bt_add').click(addDiv);
+		$('#bt_remove').click(removeDiv);
+		$('#bt_clean').click(cleanDiv);
+
+	});
+</script>
+</head>
+<body>
+	<h1><a name="cabecalho" id="cabecalho">Cabeçalho</a></h1><br />
+	<div id="ancora"><a id="ancoraRodapeVai" href="#rodape">Ir para o rodape</a></div>	
+	<button id="bt_add">Adicionar Nova Linha</button>
+	<button id="bt_remove">Remove Nova Linha</button>
+	<button id="bt_clean">Remover Tudo</button>
+	<br /><br /><br /><br />
+	<div id="cabecalho">
+		<input type="text" name="tituloData" class="cabecalhoPut" size="30" readonly="true" value="Data" />
+		<input type="text" name="tituloAtividade" class="cabecalhoPut" size="30" readonly="true" value="Atividade" />
+		<input type="text" name="tituloOs" class="cabecalhoPut" size="30" readonly="true" value="Os/Projeto" />
+		<input type="text" name="tituloDescricao" class="cabecalhoPut" size="50" readonly="true" value="Descrição" />
+		<input type="text" name="tituloHoras" class="cabecalhoPut" size="30" readonly="true" value="Horas" />
+	</div>
+
+	<br />
+	<div id="container"></div>
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<div id="rodape">
+		<a href="#cabecalho">Ir para o TOPO</a>	
+		<h1><a name="rodape" id="rodape">Rodape</a></h1>
+	</div>
+</body>
+</html>

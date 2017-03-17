@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>:: Mini Senha ::</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<link href="jquery.click-calendario-1.0.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery/jquery.click-calendario-1.0.js"></script>	
+<script type="text/javascript" src="jquery/teste.js"></script>		
+
+<style type="text/css">
+.filho {
+	padding: 0px 0px 0px 0px;
+}
+
+.cabecalho {
+	padding: 0px 0px 0px 0px;
+}
+
+.cabecalhoPut {
+	border:0;
+	text-align: center;
+	font-weight:bold
+}
+</style>
+
+<script type="text/javascript">
+
+	$(window).load(function() {
+		var pass = new Array();
+		pass = aleatorio(1,7);
+		var contador = 0;
+		addDiv();
+
+		function reloadPage(){
+		  location.reload();
+		}
+		
+		function createElement(index) {
+			return '<div id="div'+index+'" class="filho"><input type="text" maxlength="1" id="valor1-'+index+'" size="10" /><input type="text" maxlength="1" id="valor2-'+index+'" size="10" /><input type="text" maxlength="1" id="valor3-'+index+'" size="10" /><input type="text" maxlength="1" id="valor4-'+index+'" size="10" /><input type="text" id="resultado-'+index+'" size="10" value="-" readonly="true"/></div>';
+		}
+
+		function addDiv() {
+			$('#container').append(createElement(contador++));
+		}
+
+
+		function pegaValor() {
+			contador--;
+			var element1 = document.getElementById('valor1-'+contador+'');
+			var element2 = document.getElementById('valor2-'+contador+'');
+			var element3 = document.getElementById('valor3-'+contador+'');
+			var element4 = document.getElementById('valor4-'+contador+'');
+			var tempValue = new Array(element1.value, element2.value, element3.value, element4.value);
+			var resultLine = getResult(pass, tempValue);
+			$('#resultado-'+contador+'').attr('value', resultLine);
+			contador++;
+			if(gameOver(contador)){
+				document.getElementById('failDiv').style.display = 'inline';
+			}else{
+				if(resultWin(resultLine)){
+					document.getElementById('resultDiv').style.display = 'inline';
+					document.getElementById('sendDiv').style.display = 'none';
+				}else{
+					addDiv();
+				}
+			}
+		}
+		
+		$('#btn_send').click(pegaValor);
+		$('#btn_start').click(reloadPage);
+
+	});
+
+
+</script>
+</head>
+<body>
+	<div id="tituloDiv" style="font-size:21px;font-weight:bold">Mini-Senha</div>
+	<br />
+	<div id="explanationDiv">
+		<p>
+		Quando o jogo iniciou foi gerado uma senha de 4 digitos utilizando os caracteres 1, 2, 3, 4, 5, 6.<br />
+		O objetivo do jogo é acertar essa senha.
+		</p>
+		<p>
+		Como:<br />
+		Insira os valores na posição que imagina que foram gerados e clique em enviar, então o resultado<br />
+		da sua sequência escolhida aparecerá na caixa "Resultado".
+		</p>
+		<p>
+		Interprete o resultado e digite uma nova sequência na linha criada logo a baixo, você tem 8 chances.
+		</p>
+		<p>
+		O resultado é gerado na sequência dos valores e separados por uma virgula, e siginificam:<br />
+		2 = esse número não faz parte dessa senha, não precisa mais usa-lo.<br />
+		1 = você acertou a número mas não a posição. <br />
+		0 = você acertou o número e a posição.<br />
+		</p>
+	</div>
+	<br /><br /><br />
+	<div id="cabecalho">
+		<input type="text" name="tituloValor1" class="cabecalhoPut" size="10" readonly="true" value="Valor 1" />
+		<input type="text" name="tituloValor2" class="cabecalhoPut" size="10" readonly="true" value="Valor 2" />
+		<input type="text" name="tituloValor3" class="cabecalhoPut" size="10" readonly="true" value="Valor 3" />
+		<input type="text" name="tituloValor4" class="cabecalhoPut" size="10" readonly="true" value="Valor 4" />
+		<input type="text" name="tituloResultado" class="cabecalhoPut" size="10" readonly="true" value="Resultado" />
+	</div>
+	<br />
+	<div id="container"></div>
+	<div id="sendDiv" style="display:inline">
+		<button id="btn_send">Enviar</button>
+	</div>
+	<br />
+	<div id="resultDiv" style="display:none">
+		Parabéns você acertou 
+		<button id="btn_start">Começar de Novo</button>
+	
+	</div>
+	<div id="failDiv" style="display:none">Qué qué qué quééééééée´. YOU LOSE BABY</div>
+</body>
+</html>

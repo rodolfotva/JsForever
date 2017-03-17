@@ -1,0 +1,227 @@
+.button{
+	display:inline-block;
+	width:auto; 
+	overflow:visible; /*IE6 e 7*/  
+	outline:none; /*Somente a(link)*/ 	
+	border: 1px solid #7AADCB; 
+	background: #2C424F; 
+	font:11px tahoma;
+	font-weight:700;
+	text-decoration:none;	
+	text-transform:uppercase;
+	color:#E6EBE2!important; 
+	cursor:pointer;		
+	text-shadow: 0 1px 1px #666666; 
+	padding:2px 6px 2px 2px!important;
+	line-height:19px;
+	margin:2px}
+	
+.button:hover, .button:focus{
+	background:#5BB75B;
+	border: 1px solid #009900;
+	color:#fff!important; 
+	cursor:pointer;
+	outline: none;
+	text-decoration:none!important}
+	
+.button:active {background:#479104}
+
+/* buttons jquery ui */
+
+
+/* ajustes para quando não for link*/
+input.button{
+	padding:4px 6px 4px 5px!important;}
+
+.btnCancel {
+	display:inline-block; 
+	width:auto; 
+	overflow:visible; /*IE6 e 7*/  
+	outline:none; /*Somente a(link)*/ 	
+	font:11px tahoma;
+	font-weight:700;
+	text-decoration:none;	
+	text-transform:uppercase;
+	color:#658594!important; 
+	padding:2px 6px 2px 18px!important;
+	line-height:19px;
+	margin:2px; background:url(../images/ico/icoCancel.png) 5px 50% no-repeat}
+	
+.btnCancel:hover, .btnCancel:focus {color:#2C424F!important}
+.btnCancel:active  {color:#000!important}
+
+/* TAGS */
+.tag{
+	display:inline-block;
+	width:auto; 
+	height:auto; 
+	overflow:visible; /*IE6 e 7*/ 
+	padding:0 5px; 
+	outline:none; /*Somente a(link)*/ 
+	margin:2px 0; 
+	font-weight:400;
+	text-decoration:none!important;	
+	color:#fff!important;	
+	cursor:pointer;	
+	background:#658594;
+	text-shadow: 0 1px 1px #426179}	
+	
+.tag:hover, .tag:focus{
+	background:#2C424F;
+	cursor:pointer;
+	outline: none}
+
+.highlight {background:#FF6; color:#333!important; text-shadow:none; cursor:inherit; padding:0 5px; display:inline-block;}
+
+.button-circle{
+	display:inline-block;
+	width:auto; 
+	overflow:visible; /*IE6 e 7*/  
+	outline:none; /*Somente a(link)*/ 	
+	background: #e6e6e6; /*background: #006DCC;*/
+	font:10px tahoma;
+	font-weight:700;
+	text-decoration:none;	
+	text-transform:uppercase;
+	color:#666666!important; 
+	cursor:pointer;		
+	padding:3px 6px 3px 5px!important;
+	line-height:15px;
+	margin:2px}
+	
+.button-circle:hover{
+	background:#6CE26C;
+	color:#030!important;
+	cursor:pointer;
+	outline: none;
+	text-decoration:none!important}
+	
+
+/* mensagens de retorno */
+.msg {display:inline-block; color:#FFF; text-shadow: 0 1px 1px #426179; padding:8px}	
+
+/* Icone */
+.ico {background-image:url(../images/ico/icoSprites.png); width:10px; height:10px; margin:4px; display: inline-block; float:left; line-height:18px}
+.icob {background-image:url(../images/ico/icoSprites.black.png); width:10px; height:10px; margin:4px; display: inline-block; float:left; line-height:18px}
+.tag .ico {margin:5px 3px 5px 2px!important}
+.button-circle .ico, .button-circle .icob {margin:3px 4px 3px 0 !important}
+.btnIco {padding:3px 4px!important; line-height:0!important}
+
+/* icones adcionais*/
+.user {background-position:0 0}
+.perfil {background-position:-20px 0}
+.logOff {background-position:-40px 0}
+.externalLink {background-position:-60px 0}
+.home {background-position:-80px 0}
+.products {background-position:-100px 0}
+.benefits {background-position:-20px -40px}
+.car {background-position:-120px 0}
+.vidros {background-position:-140px 0}
+.pneus {background-position:-160px 0}
+.funilaria {background-position:-180px 0}
+.cestas {background-position:-200px -0px}
+
+.newPage {background-position:0 -20px}
+.doc {background-position:-20px -20px}
+.pdf {background-position:-40px -20px}
+.print {background-position:-60px -20px}
+.mail {background-position:-80px -20px}
+.mailRead {background-position:-100px -20px}
+.clock {background-position:-120px -20px}
+.phone {background-position:-140px -20px}
+.rss {background-position:-160px -20px}
+.config {background-position:-180px -20px}
+.mapPosition {background-position:-200px -20px}
+.horas24 {background-position:-220px -20px}
+.sound {background-position:-240px -20px}
+.text {background-position:-260px -20px}	
+.history {background-position:-280px -20px}	
+
+.star {background-position: 0 -40px}
+.heart {background-position: -20px -40px}
+.message {background-position: -40px -40px}
+.icoTag {background-position: -60px -40px}
+.alert {background-position:-80px -40px}
+.info {background-position:-100px -40px}
+.calendar {background-position: -120px -40px}
+.lock {background-position: -140px -40px}
+.unlock {background-position: -160px -40px}
+.arrowR {background-position: -180px -40px}
+.arrowB {background-position: -200px -40px} 
+.arrowL {background-position: -220px -40px}
+.arrowT {background-position: -240px -40px}
+.arrowFF {background-position: -260px -40px}
+.arrowFB {background-position: -280px -40px}
+
+.plus {background-position:0 -60px}
+.minus {background-position:-20px -60px}
+.percent {background-position:-40px -60px}
+.sucess {background-position:-60px -60px}
+.save {background-position:-80px -60px}
+.view {background-position:-100px -60px}
+.edit {background-position:-120px -60px}
+.cancel {background-position:-140px -60px}
+.close {background-position:-160px -60px}
+.delete {background-position:-180px -60px}
+.refresh {background-position:-200px -60px}
+.stop {background-position:-220px -60px}
+.service {background-position:-240px -60px}
+.download {background-position:-260px -60px}
+.upload {background-position:-280px -60px}
+.codeview {background-position:-300px -60px}
+
+.list {background-position:0 -80px}
+.minis {background-position:-20px -80px}
+.grid {background-position:-40px -80px}
+.icoTabs {background-position:-60px -80px}
+.icoBtn {background-position:-80px -80px}
+.steps-p {background-position:-100px -80px}
+.dialog-p {background-position:-120px -80px}
+.drop-box-select {background-position:-140px -80px}
+.cash {background-position:-160px -80px}
+.cash-lot {background-position:-180px -80px}
+.converge {background-position:-200px -80px}
+
+/* colors */
+
+.blue {background:#49AFCD; border:1px solid #3095B1}
+.blue:hover, .blue:focus  {background:#006DCC; border:1px solid #005299}
+.blue:active {background:#003A6F}
+
+.green {background:#5BB75B; border:1px solid #51A351}
+.green:hover,.green:focus {background:#51A351; border:1px solid #448944}
+.green:active {background:#479104}
+
+.yellow {background:#FAA732; border:1px solid #F89406}
+.yellow:hover, .yellow:focus {background:#F89406; border:1px solid #BA6F04}
+.yellow:active {background:#D87E05}
+
+.red {background:#DA4F49; border:1px solid #BD362F}
+.red:hover, .red:focus{background:#BD362F; border:1px solid #8E2823}
+.red:active {background:#932924}
+
+
+
+
+body:nth-of-type(1) .button {padding:0 6px 0 6px}/*hack chrome*/
+input[type="submit"]:focus, input[type="button"]:focus {outline : none}/*for IE8 */
+
+
+/* bordas arredondadas */
+.tag {
+/*bordas arredondadas cross browser*/
+/*-moz-border-radius: 3px;  Para Firefox */
+/*-webkit-border-radius: 3px; Para Safari e Chrome */
+border-radius: 3px; /* Para Opera 10.5+*/
+}
+
+.button, .msg {
+/*-moz-border-radius: 4px;  Para Firefox */
+/*-webkit-border-radius: 4px; Para Safari e Chrome */
+border-radius: 4px;
+}
+
+.button-circle {border-radius: 10px;}
+
+/* sombras */
+.button:hover, .button:focus {box-shadow: 0 -1px 0 0 #fff inset, 0px 0px 5px #2C424F;}

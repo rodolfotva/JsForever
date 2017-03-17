@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>:: ROLAGEM AUTOMATICA VERTICAL ::</title>
+
+    <script type="text/javascript">
+      i = 0;
+      tempo = 50;
+      tamanho = 826; // tamanho da barra de rolagem  >> Ver arquivo Leiame.txt
+
+      function Rolar() {
+        document.getElementById('painel').scrollTop = i;
+        i++;
+        t = setTimeout("Rolar()", tempo);
+        if (i == tamanho) {
+          i = 0;
+        }
+      }
+      function Parar() {
+        clearTimeout(t);
+      }
+    </script>
+  </head>
+
+  <body onload="Rolar()">
+  	
+  	<h1>
+		<a name="cabecalho" id="cabecalho">ROLAGEM AUTOMATICA</a>
+	</h1>
+	
+    <div id="painel" style="font: 15px Tahoma; cursor: default; height: 200px; width: 200px; overflow: hidden; background-color: #DFEDFE; padding-left: 10px;  padding-right: 10px" onmouseover="Parar()" onmouseout="Rolar()">
+      <!-- INÍCIO DO CONTEÚDO DA DIV -->
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+  A corrida para a criação de uma vacina contra o vírus da zika já tem envolvidos 15 laboratórios de instituições públicas e privadas, afirmou hoje a OMS (Organização Mundial da Saúde), que diz ver os esforços de pesquisa e desenvolvimento no combate à doença "caminhando muito rápido".
+Segundo a diretora-geral assistente da entidade, Marie-Paule Kieny, os imunizantes em estágio mais avançado de desenvolvimento são uma vacina de DNA desenvolvida pelos NIH (Instituto Nacionais de Saúde dos EUA) e uma vacina de vírus inativado produzida pela empresa indiana Bharat Biotech.
+Essas vacinas podem conseguir iniciar testes em humanos dentro de 18 meses, se não ocorrerem imprevistos durante os estágios iniciais de desenvolvimento, afirmou Kieny em entrevista coletiva.
+Segundo a médica, dez empresas do mundo já estão fornecendo testes de diagnósticos genéticos ou de anticorpos para o zika, sem especificar qual tipo de exame está mais difundido. Outras dez empresas ainda desenvolvem produtos comerciais.
+Nenhum teste para o zika, porém, foi validado de maneira independente nem aprovado por agências regulatórias. Os exames realizados até agora são todos feitos por entidades de governo.
+Testes para distribuição em larga escala devem estar prontos "dentro de semanas, e não anos", afirmou Kieny.
+Mosquitos
+A médica da OMS afirmou também que dois dos novos métodos para combate ao Aedes aegypti parecem promissores: o uso da bactéria Wolbachia, que enfraquece o inseto, e o uso de mosquitos transgênicos estéreis, que diminuem a população do animal.
+Keiny afirma que, para produtos que atingem "um estágio avançado de testes", a OMS pode adotar um trâmite especial para recomendar o uso experimental da técnica.
+A diretora-geral assistente afirmou também que espera ver dentro de algumas semanas estudos que comecem a explicar qual é o mecanismo biológico por trás dos casos de bebês nascidos com microcefalia após suas mães terem sido infectadas por zika.
+      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+      <!-- FIM DO CONTEÚDO DA DIV -->
+    </div>
+  </body>
+</html>

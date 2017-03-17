@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>:: MENU DESLIZANTE ::</title>
+
+
+<style>
+#tudo {
+	width: 800px;
+	height: 250px;
+	background-color: orange;
+}
+
+#tudo1 {
+	position: relative;
+	width: 80%;
+	height: 200px;
+	background-color: gray;
+	float: right;
+	color: white;
+}
+
+#tudo2 {
+	position: relative;
+	width: 10%;
+	height: 200px;
+	background-color: red;
+	float: right;
+}
+
+#tudo3 {
+	position: relative;
+	width: 80%;
+	height: 200px;
+	background-color: yellow;
+	color: black;
+	float: right;
+}
+
+#tudo4 {
+	position: relative;
+	width: 10%;
+	height: 200px;
+	background-color: pink;
+	float: right;
+}
+
+#toggle {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+ 
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	$("#tudo1").hide();
+	$("#tudo3").hide();
+	$("#tudo2").click(function() {
+		if($("#tudo3").is(":visible")){
+			$("#tudo3").animate({width:'toggle'},250,function() {
+				$("#tudo1").animate({width:'toggle'},350);
+			  });
+		} else {
+			$("#tudo1").animate({width:'toggle'},350);
+		}
+		
+	});
+	$("#tudo4").click(function() {
+		if($("#tudo1").is(":visible")){
+			$("#tudo1").animate({width:'toggle'},250,function() {
+				$("#tudo3").animate({width:'toggle'},350);
+			  });
+		} else {
+			$("#tudo3").animate({width:'toggle'},350);
+		}
+	});
+});
+
+function change(){
+	if($('#tudo1').next().size()){
+		$("#tudo1").before($("#tudo2"));
+		$("#tudo1").animate({width:'toggle'},30);
+	} else {
+		$("#tudo2").before($("#tudo1"));
+		$("#tudo1").animate({width:'toggle'},30);
+	}
+}
+
+function change3(){
+	if($('.left').next().size()){
+		$("#tudo2").before($("#tudo1"));
+		$("#tudo1").animate({width:'toggle'},30).removeClass('left');
+		$("#tudo3").hide().width('0%');
+	} else {
+		$("#tudo1").before($("#tudo2")).animate({width:'toggle'},30).addClass('left');
+		$("#tudo3").width('70%').delay(1000).show();
+	}
+}
+
+function change2(){
+	$("#tudo1").animate({width:'toggle'},30);
+}
+
+</script>
+</head>
+<body>
+	<h1>
+		<a name="cabecalho" id="cabecalho">MENU DESLIZANTE</a>
+	</h1>
+
+
+	<div id="tudo" >
+		<div id="tudo1">http://www.terra.com.br</div>
+		<div id="tudo2"></div>
+		<div id="tudo3">http://www.uol.com.br</div>
+		<div id="tudo4"></div>
+	</div>
+
+</body>
+</html>

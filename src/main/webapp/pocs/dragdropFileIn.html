@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>:: DRAG DROP FILE INTO ::</title>
+
+<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+}
+
+pre, .module01 {
+    width: 90%;
+    margin: 15px auto;
+    padding: 10px;
+    border: 2px solid #000;
+    max-height: 260px;
+    overflow: auto;
+    text-align: left;
+}
+
+.module01 { text-align: center; height: 100px; }
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+</style>
+
+<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="../jquery/modernizr.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		if (!Modernizr.draganddrop) {
+			alert('Browser não suporta DnD');
+		}
+
+		var fileaccess = document.querySelector("#fileaccess");
+
+		fileaccess.ondrop = function(e) {
+		    var dt = e.dataTransfer
+		    var files = dt.files
+		    var elem = this;
+		    var html = "Nome: " + files[0].name + " Tamanho: " + files[0].size + " Tipo: " + files[0].type;
+
+		    elem.innerHTML = html;
+		    e.preventDefault();
+		}
+
+		fileaccess.ondragenter = function(e){
+			e.preventDefault();
+		}
+
+		fileaccess.ondragover = function(e){
+			e.preventDefault();
+		}
+
+	});
+</script>
+</head>
+
+<body>
+
+	<div style="padding-bottom:10px;">
+		<h1><a name="cabecalho" id="cabecalho">DRAG DROP FILE INTO</a></h1>
+	</div>
+
+	<div id="fileaccess" class="wrapper module01" >
+		<img src="http://levashov-media.com/Pictures/Icons/document_32x32.png"/>
+		<div id="teste">
+			Arraste o arquivo aqui
+		</div>
+	</div>
+
+</body>
+</html>
